@@ -1,0 +1,21 @@
+{
+    "Name": "taiottc40eventhubms",
+    "Type": "Data Stream",
+    "DataSourceType": "Event Hub",
+    "EventHubProperties": {
+        "ServiceBusNamespace": "taiottc40eventhubs",
+        "EventHubName": "taiottc40eventhubms",
+        "SharedAccessPolicyName": null,
+        "SharedAccessPolicyKey": null,
+        "ConsumerGroupName": "asa-tadtaplt-resort-dev",
+        "AuthenticationMode": "Msi"
+    },
+    "DataSourceCredentialDomain": null,
+    "Serialization": {
+        "Type": "Json",
+        "Encoding": "UTF8"
+    },
+    "PartitionKey": null,
+    "CompressionType": "GZip",
+    "ScriptType": "Input"
+}

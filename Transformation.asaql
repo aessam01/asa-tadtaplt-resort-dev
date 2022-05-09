@@ -1,0 +1,155 @@
+-- RESORTS
+SELECT
+      *
+    , main.EventEnqueuedUtcTime
+    , main.EventProcessedUtcTime
+    , CASE
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 00 AND 15 THEN '00'
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 16 AND 30 THEN '15'
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 31 AND 45 THEN '30'
+            ELSE '45'
+     END as EventEnqueuedUtcMinute
+INTO [sttadtapltcoredev-raw-re]
+FROM [taiottc40eventhubre] as main
+--INNER JOIN sqlPositionRef posref
+    --      ON  UPPER(main.RID) = UPPER(posref.resortID)
+------------------------------------------------------------------------------
+-- PRODUCERS
+
+SELECT
+      main.RID
+    , main.TYP
+    , main.TS
+    , main.EventEnqueuedUtcTime
+    , main.EventProcessedUtcTime
+    , CASE
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 00 AND 15 THEN '00'
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 16 AND 30 THEN '15'
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 31 AND 45 THEN '30'
+            ELSE '45'
+      END as EventEnqueuedUtcMinute
+    --, itemsl.arrayvalue.*
+    , main.[Items]
+    --, COUNT(*) as NumberOfRows
+INTO [sttadtapltcoredev-raw-gu]
+FROM [taiottc40eventhubgu] as main --TIMESTAMP BY main.EventEnqueuedUtcTime
+--CROSS APPLY GetArrayElements(main.[Items]) AS itemsl
+-- GROUP BY 
+--       main.RID
+--     , main.TYP
+--     , main.TS
+--     , main.EventEnqueuedUtcTime
+--     , main.EventProcessedUtcTime
+--     , CASE
+--             WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 00 AND 15 THEN '00'
+--             WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 16 AND 30 THEN '15'
+--             WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 31 AND 45 THEN '30'
+--             ELSE '45'
+--       END
+--     , main.[Items]
+--     , TumblingWindow(minute,5)
+
+------------------------------------------------------------------------------
+-- METEO STATIONS
+SELECT
+      main.RID
+    , main.TYP
+    , main.TS
+    , main.EventEnqueuedUtcTime
+    , main.EventProcessedUtcTime
+    , CASE
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 00 AND 15 THEN '00'
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 16 AND 30 THEN '15'
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 31 AND 45 THEN '30'
+            ELSE '45'
+      END as EventEnqueuedUtcMinute
+    --, itemsl.arrayvalue.*
+    , main.[Items]
+INTO [sttadtapltcoredev-raw-ms]
+FROM [taiottc40eventhubms] as main 
+--CROSS APPLY GetArrayElements(main.[Items]) AS itemsl
+
+
+------------------------------------------------------------------------------
+-- MACHINE ROOMS
+SELECT
+      main.RID
+    , main.TYP
+    , main.TS
+    , main.EventEnqueuedUtcTime
+    , main.EventProcessedUtcTime
+    , CASE
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 00 AND 15 THEN '00'
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 16 AND 30 THEN '15'
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 31 AND 45 THEN '30'
+            ELSE '45'
+      END as EventEnqueuedUtcMinute
+    --, itemsl.arrayvalue.*
+    , main.[Items]
+INTO [sttadtapltcoredev-raw-mr]
+FROM [taiottc40eventhubmr] as main
+--CROSS APPLY GetArrayElements(main.[Items]) AS itemsl
+
+
+------------------------------------------------------------------------------
+-- POSITIONS
+SELECT
+      main.RID
+    , main.TYP
+    , main.TS
+    , main.EventEnqueuedUtcTime
+    , main.EventProcessedUtcTime
+    , CASE
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 00 AND 15 THEN '00'
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 16 AND 30 THEN '15'
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 31 AND 45 THEN '30'
+            ELSE '45'
+      END as EventEnqueuedUtcMinute
+    --, itemsl.arrayvalue.*
+    , main.[Items]
+INTO [sttadtapltcoredev-raw-po]
+FROM [taiottc40eventhubpo] as main
+--CROSS APPLY GetArrayElements(main.[Items]) AS itemsl
+
+
+------------------------------------------------------------------------------
+-- RESURCES
+SELECT
+      main.RID
+    , main.TYP
+    , main.TS
+    , main.EventEnqueuedUtcTime
+    , main.EventProcessedUtcTime
+    , CASE
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 00 AND 15 THEN '00'
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 16 AND 30 THEN '15'
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 31 AND 45 THEN '30'
+            ELSE '45'
+      END as EventEnqueuedUtcMinute
+    --, itemsl.arrayvalue.*
+    , main.[Items]
+INTO [sttadtapltcoredev-raw-rs]
+FROM [taiottc40eventhubrs] as main
+--CROSS APPLY GetArrayElements(main.[Items]) AS itemsl
+
+------------------------------------------------------------------------------
+-- TRACK
+SELECT
+      main.RID
+    , main.TYP
+    , main.TS
+    , main.EventEnqueuedUtcTime
+    , main.EventProcessedUtcTime
+    , CASE
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 00 AND 15 THEN '00'
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 16 AND 30 THEN '15'
+            WHEN DATEPART(minute, main.EventEnqueuedUtcTime) BETWEEN 31 AND 45 THEN '30'
+            ELSE '45'
+      END as EventEnqueuedUtcMinute
+    --, itemsl.arrayvalue.*
+    , main.[Items]
+INTO [sttadtapltcoredev-raw-tr]
+FROM [taiottc40eventhubtr] as main
+--CROSS APPLY GetArrayElements(main.[Items]) AS itemsl
+
+    

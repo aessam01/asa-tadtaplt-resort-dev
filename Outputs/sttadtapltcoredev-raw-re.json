@@ -1,0 +1,26 @@
+{
+    "Name": "sttadtapltcoredev-raw-re",
+    "DataSourceType": "Blob Storage",
+    "BlobStorageProperties": {
+        "StorageAccounts": [
+            {
+                "AccountName": "sttadtapltcoredev",
+                "AccountKey": null
+            }
+        ],
+        "Container": "raw",
+        "PathPattern": "re/{datetime:yyyy}/{datetime:MM}/{datetime:dd}/{datetime:HH}/{EventEnqueuedUtcMinute}",
+        "DateFormat": "yyyy/MM/dd",
+        "TimeFormat": "HH",
+        "AuthenticationMode": "Msi"
+    },
+    "DataSourceCredentialDomain": null,
+    "Serialization": {
+        "Type": "Json",
+        "Encoding": "UTF8",
+        "Format": "LineSeparated"
+    },
+    "MinimumRows": 50,
+    "MaximumTime": "00:05:00",
+    "ScriptType": "Output"
+}

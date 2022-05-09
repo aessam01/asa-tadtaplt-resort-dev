@@ -1,0 +1,70 @@
+{
+    "name": "asa-tadtaplt-resort-dev",
+    "startFile": "Transformation.asaql",
+    "configurations": [
+        {
+            "filePath": "Functions/FnString.js.json",
+            "subType": "JSFunction"
+        },
+        {
+            "filePath": "Inputs/taiottc40eventhubgu.json",
+            "subType": "Input"
+        },
+        {
+            "filePath": "Inputs/taiottc40eventhubmr.json",
+            "subType": "Input"
+        },
+        {
+            "filePath": "Inputs/taiottc40eventhubms.json",
+            "subType": "Input"
+        },
+        {
+            "filePath": "Inputs/taiottc40eventhubpo.json",
+            "subType": "Input"
+        },
+        {
+            "filePath": "Inputs/taiottc40eventhubre.json",
+            "subType": "Input"
+        },
+        {
+            "filePath": "Inputs/taiottc40eventhubrs.json",
+            "subType": "Input"
+        },
+        {
+            "filePath": "Inputs/taiottc40eventhubtr.json",
+            "subType": "Input"
+        },
+        {
+            "filePath": "Outputs/sttadtapltcoredev-raw-gu.json",
+            "subType": "Output"
+        },
+        {
+            "filePath": "Outputs/sttadtapltcoredev-raw-mr.json",
+            "subType": "Output"
+        },
+        {
+            "filePath": "Outputs/sttadtapltcoredev-raw-ms.json",
+            "subType": "Output"
+        },
+        {
+            "filePath": "Outputs/sttadtapltcoredev-raw-po.json",
+            "subType": "Output"
+        },
+        {
+            "filePath": "Outputs/sttadtapltcoredev-raw-re.json",
+            "subType": "Output"
+        },
+        {
+            "filePath": "Outputs/sttadtapltcoredev-raw-rs.json",
+            "subType": "Output"
+        },
+        {
+            "filePath": "Outputs/sttadtapltcoredev-raw-tr.json",
+            "subType": "Output"
+        },
+        {
+            "filePath": "JobConfig.json",
+            "subType": "JobConfig"
+        }
+    ]
+}
